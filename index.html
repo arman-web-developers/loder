@@ -3,58 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carausal</title>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body{
-      height: 100vh;
-      display: grid;
-      place-items: center;
-      background-color: #00ccff;
-    }
-    .container-img{
-      width: 60vw;
-      height: 30rem;
-      border-radius: 1rem;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      background-image: url("https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-      background-size: cover;
-      animation: gallery 20s linear infinite;
-      animation-direction: alternate;
-    }
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: #191825;
+      }
+      .loader{
+        width: 20rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: #00ABE4;
+        position: relative;
+        animation: loder 3s linear infinite reverse;
+      }
+      @keyframes loder {
+        100%{
+          rotate: 360deg;
+        }
+      }
 
-    @keyframes gallery {
-      0%{
-        background-image: url("https://images.pexels.com/photos/8100784/pexels-photo-8100784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      .loader::before{
+        content: "";
+        width: 17rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #191825;
       }
-      20%{
-        background-image: url("https://images.pexels.com/photos/10528234/pexels-photo-10528234.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-      }
-      40%{
-        background-image: url("https://images.pexels.com/photos/4338015/pexels-photo-4338015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 
+      
+      .loader::after{
+        content: "";
+        width: 5rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        position: absolute;
+        top: -2.5rem;
+        left: 8rem;
+        background-color: #00ABE4;
+        box-shadow: 0px 0px 20px 10px #00ABE4;
       }
-      60%{
-        background-image: url("https://images.pexels.com/photos/4338015/pexels-photo-4338015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-
-      }
-      80%{
-        background-image: url("https://images.pexels.com/photos/1311445/pexels-photo-1311445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-
-      }
-      100%{
-        background-image: url("https://images.pexels.com/photos/2131623/pexels-photo-2131623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-
-      }
-    }
-  </style>
+      /* bg color for loader : background-color: #865dff; */
+    </style>
   </head>
   <body>
-    <div class="container-img">
-    </div>
+    <div class="loader"></div>
   </body>
 </html>
